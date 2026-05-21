@@ -27,7 +27,7 @@ while (continuar)
             Console.WriteLine("--- ADICIONAR TAREFA ---");
             Tarefa novaTarefa = new Tarefa();
             Console.Write("Título da tarefa: ");
-            novaTarefa.TextoTarefa = Console.ReadLine(); // Atualizado
+            novaTarefa.TextoTarefa = Console.ReadLine();
             Console.Write("Descrição da tarefa: ");
             novaTarefa.Descricao = Console.ReadLine();
 
@@ -51,7 +51,7 @@ while (continuar)
                 tarefaEditar.Id = idEditar;
                 Console.WriteLine("\n(Deixe em branco o campo que NÃO deseja alterar)");
                 Console.Write("Novo Título: ");
-                tarefaEditar.TextoTarefa = Console.ReadLine(); // Atualizado
+                tarefaEditar.TextoTarefa = Console.ReadLine();
                 Console.Write("Nova Descrição: ");
                 tarefaEditar.Descricao = Console.ReadLine();
                 repo.Editar(tarefaEditar);
@@ -105,7 +105,7 @@ void ExibirListaDeTarefas()
     foreach (var t in tarefas)
     {
         string status = t.Concluida ? "[✓] Concluída" : "[ ] Pendente";
-        Console.WriteLine($"ID: {t.Id} | {status} | Título: {t.TextoTarefa}"); // Atualizado
+        Console.WriteLine($"ID: {t.Id} | {status} | Título: {t.TextoTarefa}");
         if (!string.IsNullOrEmpty(t.Descricao)) Console.WriteLine($"   Descrição: {t.Descricao}");
         Console.WriteLine($"   Criada em: {t.DataCriacao:dd/MM/yyyy HH:mm}");
         Console.WriteLine(new string('-', 50));
