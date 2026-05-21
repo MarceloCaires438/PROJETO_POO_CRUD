@@ -13,7 +13,6 @@ namespace PROJETO_POO_CRUD.Repository
         {
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                // Ajustado para a coluna física real: TAREFA
                 string query = "INSERT INTO TAREFAS (TAREFA, DESCRICAO, DATA_CRIACAO, CONCLUIDA) VALUES (@TAREFA, @DESCRICAO, GETDATE(), 0)";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@TAREFA", tarefa.TextoTarefa);
@@ -40,7 +39,7 @@ namespace PROJETO_POO_CRUD.Repository
                         tarefas.Add(new Tarefa
                         {
                             Id = (int)reader["ID"],
-                            TextoTarefa = reader["TAREFA"].ToString(), // Lendo da coluna TAREFA
+                            TextoTarefa = reader["TAREFA"].ToString(),
                             Descricao = reader["DESCRICAO"]?.ToString(),
                             DataCriacao = (DateTime)reader["DATA_CRIACAO"],
                             Concluida = (bool)reader["CONCLUIDA"]
@@ -88,7 +87,6 @@ namespace PROJETO_POO_CRUD.Repository
 
                 if (!string.IsNullOrEmpty(tarefa.TextoTarefa))
                 {
-                    // Ajustado para atualizar a coluna TAREFA
                     campos.Add("TAREFA = @TAREFA");
                     cmd.Parameters.AddWithValue("@TAREFA", tarefa.TextoTarefa);
                 }
