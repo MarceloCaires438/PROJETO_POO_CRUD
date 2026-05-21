@@ -29,7 +29,7 @@ namespace PROJETO_POO_CRUD.Repository
             List<Tarefa> tarefas = new List<Tarefa>();
             using (SqlConnection con = new SqlConnection(conexao))
             {
-                // Ajustado para buscar a coluna TAREFA
+                
                 string query = "SELECT ID, TAREFA, DESCRICAO, DATA_CRIACAO, CONCLUIDA FROM TAREFAS";
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
