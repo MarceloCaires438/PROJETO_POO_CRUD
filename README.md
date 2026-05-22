@@ -17,3 +17,10 @@ Projeto console desenvolvido em C# para gerenciamento de tarefas com operações
 
 ## Objetivo
 Projeto criado para praticar conceitos de POO, CRUD, acesso a banco de dados e organização em camadas.
+
+## Como executar
+
+1. Clone o repositório
+2. Execute o script `database.sql`
+3. Ajuste a connection string no arquivo `TarefaRepository.cs`
+4. Execute o projeto no Visual Studio
